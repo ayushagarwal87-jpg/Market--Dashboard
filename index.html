@@ -1,106 +1,29 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>India Pre-Market Dashboard</title>
-
 <style>
-*{
-margin:0;
-padding:0;
-box-sizing:border-box;
-font-family:-apple-system,BlinkMacSystemFont,Arial,sans-serif;
-}
-
-body{
-background:#0b1220;
-color:white;
-padding:16px;
-}
-
-h1{
-font-size:28px;
-margin-bottom:8px;
-}
-
-.subtitle{
-color:#94a3b8;
-margin-bottom:20px;
-}
-
-.bias{
-background:#111827;
-padding:18px;
-border-radius:16px;
-margin-bottom:16px;
-border:1px solid #1f2937;
-}
-
-.bias-value{
-font-size:32px;
-font-weight:bold;
-color:#22c55e;
-margin-top:6px;
-}
-
-.grid{
-display:grid;
-grid-template-columns:repeat(2,1fr);
-gap:12px;
-margin-bottom:20px;
-}
-
-.card{
-background:#111827;
-border-radius:16px;
-padding:14px;
-border:1px solid #1f2937;
-}
-
-.label{
-color:#94a3b8;
-font-size:12px;
-}
-
-.value{
-font-size:22px;
-font-weight:bold;
-margin-top:6px;
-}
-
+*{margin:0;padding:0;box-sizing:border-box;font-family:-apple-system,BlinkMacSystemFont,Arial,sans-serif;}
+body{background:#0b1220;color:white;padding:16px;}
+h1{font-size:28px;margin-bottom:8px;}
+.subtitle{color:#94a3b8;margin-bottom:20px;}
+.bias{background:#111827;padding:18px;border-radius:16px;margin-bottom:16px;border:1px solid #1f2937;}
+.bias-value{font-size:32px;font-weight:bold;color:#22c55e;margin-top:6px;}
+.grid{display:grid;grid-template-columns:repeat(2,1fr);gap:12px;margin-bottom:20px;}
+.card{background:#111827;border-radius:16px;padding:14px;border:1px solid #1f2937;}
+.label{color:#94a3b8;font-size:12px;}
+.value{font-size:22px;font-weight:bold;margin-top:6px;}
 .green{color:#22c55e;}
-.red{color:#ef4444;}
-
-.section{
-background:#111827;
-border-radius:16px;
-padding:16px;
-margin-bottom:16px;
-border:1px solid #1f2937;
-}
-
-.section h2{
-margin-bottom:12px;
-font-size:18px;
-}
-
-ul{
-padding-left:18px;
-line-height:1.8;
-}
-
-.footer{
-text-align:center;
-color:#64748b;
-margin-top:20px;
-font-size:12px;
-}
+.section{background:#111827;border-radius:16px;padding:16px;margin-bottom:16px;border:1px solid #1f2937;}
+.section h2{margin-bottom:12px;font-size:18px;}
+ul{padding-left:18px;line-height:1.8;}
+.footer{text-align:center;color:#64748b;margin-top:20px;font-size:12px;}
 </style>
 </head>
-
 <body>
-
 <h1>📈 India Pre-Market Dashboard</h1>
 <div class="subtitle">For Indian Equity Traders</div>
 
@@ -110,67 +33,18 @@ font-size:12px;
 </div>
 
 <div class="grid">
-
-<div class="card">
-<div class="label">Gift Nifty</div>
-<div class="value">--</div>
-</div>
-
-<div class="card">
-<div class="label">India VIX</div>
-<div class="value">--</div>
-</div>
-
-<div class="card">
-<div class="label">S&P 500</div>
-<div class="value green">--</div>
-</div>
-
-<div class="card">
-<div class="label">Nasdaq</div>
-<div class="value green">--</div>
-</div>
-
-<div class="card">
-<div class="label">Dow Jones</div>
-<div class="value">--</div>
-</div>
-
-<div class="card">
-<div class="label">Nikkei</div>
-<div class="value">--</div>
-</div>
-
-<div class="card">
-<div class="label">Hang Seng</div>
-<div class="value">--</div>
-</div>
-
-<div class="card">
-<div class="label">Shanghai</div>
-<div class="value">--</div>
-</div>
-
-<div class="card">
-<div class="label">Brent Crude</div>
-<div class="value">--</div>
-</div>
-
-<div class="card">
-<div class="label">Gold</div>
-<div class="value">--</div>
-</div>
-
-<div class="card">
-<div class="label">Silver</div>
-<div class="value">--</div>
-</div>
-
-<div class="card">
-<div class="label">USDINR</div>
-<div class="value">--</div>
-</div>
-
+<div class="card"><div class="label">Gift Nifty</div><div class="value" id="giftnifty">--</div></div>
+<div class="card"><div class="label">India VIX</div><div class="value" id="vix">--</div></div>
+<div class="card"><div class="label">S&P 500</div><div class="value green" id="sp500">--</div></div>
+<div class="card"><div class="label">Nasdaq</div><div class="value green" id="nasdaq">--</div></div>
+<div class="card"><div class="label">Dow Jones</div><div class="value" id="dow">--</div></div>
+<div class="card"><div class="label">Nikkei</div><div class="value" id="nikkei">--</div></div>
+<div class="card"><div class="label">Hang Seng</div><div class="value" id="hangseng">--</div></div>
+<div class="card"><div class="label">Shanghai</div><div class="value" id="shanghai">--</div></div>
+<div class="card"><div class="label">Brent Crude</div><div class="value" id="crude">--</div></div>
+<div class="card"><div class="label">Gold</div><div class="value" id="gold">--</div></div>
+<div class="card"><div class="label">Silver</div><div class="value" id="silver">--</div></div>
+<div class="card"><div class="label">USDINR</div><div class="value" id="usdinr">--</div></div>
 </div>
 
 <div class="section">
@@ -192,17 +66,33 @@ font-size:12px;
 
 <div class="section">
 <h2>🤖 AI Market Outlook</h2>
-<p>
-Awaiting live data integration.
-This section will summarize global markets
-and estimate the likely opening bias for
-Indian equities.
-</p>
+<p id="outlook">Awaiting live market data...</p>
 </div>
 
-<div class="footer">
-Version 2 • Built for Ayush
-</div>
+<div class="footer">Version 3 • Connected to Cloudflare Worker</div>
 
+<script>
+async function loadMarketData() {
+  try {
+    const response = await fetch("https://market-dashboard-api.ayush-agarwal87.workers.dev/");
+    const data = await response.json();
+
+    document.getElementById("sp500").textContent = data.indices.sp500;
+    document.getElementById("nasdaq").textContent = data.indices.nasdaq;
+    document.getElementById("dow").textContent = data.indices.dow;
+    document.getElementById("nikkei").textContent = data.indices.nikkei;
+    document.getElementById("hangseng").textContent = data.indices.hangseng;
+    document.getElementById("shanghai").textContent = data.indices.shanghai;
+    document.getElementById("gold").textContent = data.commodities.gold;
+    document.getElementById("silver").textContent = data.commodities.silver;
+    document.getElementById("crude").textContent = data.commodities.crude;
+    document.getElementById("usdinr").textContent = data.forex.usdinr;
+    document.getElementById("outlook").textContent = data.aiOutlook;
+  } catch (err) {
+    document.getElementById("outlook").textContent = "Unable to connect to backend.";
+  }
+}
+loadMarketData();
+</script>
 </body>
 </html>
